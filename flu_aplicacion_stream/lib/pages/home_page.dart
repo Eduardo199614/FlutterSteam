@@ -52,7 +52,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// Contenido de la página de inicio
 class HomeContent extends StatelessWidget {
   final List<Movie> movies = [
     Movie(title: 'Pelicula 1', imageUrl: 'assets/imagen/pelicula1.jpeg'),
@@ -63,58 +62,29 @@ class HomeContent extends StatelessWidget {
     Movie(title: 'Pelicula 2', imageUrl: 'assets/imagen/pelicula2.jpeg'),
     Movie(title: 'Pelicula 3', imageUrl: 'assets/imagen/pelicula3.jpeg'),
     Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 1', imageUrl: 'assets/imagen/pelicula1.jpeg'),
-    Movie(title: 'Pelicula 2', imageUrl: 'assets/imagen/pelicula2.jpeg'),
-    Movie(title: 'Pelicula 3', imageUrl: 'assets/imagen/pelicula3.jpeg'),
-    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 1', imageUrl: 'assets/imagen/pelicula1.jpeg'),
-    Movie(title: 'Pelicula 2', imageUrl: 'assets/imagen/pelicula2.jpeg'),
-    Movie(title: 'Pelicula 3', imageUrl: 'assets/imagen/pelicula3.jpeg'),
-    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0), // Añadimos padding para el GridView
+      padding: const EdgeInsets.all(8.0),
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 5, // 5 columnas
-          crossAxisSpacing: 8.0, // Espacio horizontal entre columnas
-          mainAxisSpacing: 8.0, // Espacio vertical entre filas
-          childAspectRatio:
-              0.7, // Relación de aspecto de cada ítem (ancho/alto)
+          crossAxisCount: 3,
+          crossAxisSpacing: 8.0,
+          mainAxisSpacing: 8.0,
+          childAspectRatio: 0.7,
         ),
         itemCount: movies.length,
         itemBuilder: (context, index) {
-          return Column(
-            children: [
-              Image.asset(
-                movies[index].imageUrl,
-                fit: BoxFit.cover,
-                width: 100, // Ajuste del ancho
-                height: 120, // Ajuste de la altura
-              ),
-              SizedBox(height: 8), // Espacio entre la imagen y el texto
-              Text(
-                movies[index].title,
-                style: TextStyle(fontSize: 12), // Ajuste del tamaño del texto
-                textAlign: TextAlign.center, // Centrado del texto
-              ),
-            ],
-          );
+          return HoverMovieCard(movie: movies[index]);
         },
       ),
     );
   }
 }
 
+// Modelo de la película
 class Movie {
   final String title;
   final String imageUrl;
@@ -122,31 +92,45 @@ class Movie {
   Movie({required this.title, required this.imageUrl});
 }
 
-class MovieCard extends StatelessWidget {
+// Widget con efecto de hover
+class HoverMovieCard extends StatefulWidget {
   final Movie movie;
 
-  const MovieCard({Key? key, required this.movie}) : super(key: key);
+  const HoverMovieCard({Key? key, required this.movie}) : super(key: key);
+
+  @override
+  _HoverMovieCardState createState() => _HoverMovieCardState();
+}
+
+class _HoverMovieCardState extends State<HoverMovieCard> {
+  bool _isHovered = false;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            movie.imageUrl,
-            width: 100,
-            height: 120,
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              movie.title,
-              style: TextStyle(fontWeight: FontWeight.bold),
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 300),
+        transform: _isHovered
+            ? (Matrix4.identity()..scale(1.1)) // Transformación correcta
+            : Matrix4.identity(),
+        child: Column(
+          children: [
+            Image.asset(
+              widget.movie.imageUrl,
+              fit: BoxFit.cover,
+              width: 100,
+              height: 120,
             ),
-          ),
-        ],
+            SizedBox(height: 8),
+            Text(
+              widget.movie.title,
+              style: TextStyle(fontSize: 12),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }
