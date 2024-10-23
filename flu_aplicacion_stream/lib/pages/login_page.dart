@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: Column(
                           children: [
                             Image.asset(
-                              'assets/logo.png', // Logo de Video Streaming
+                              'assets/logo.jpeg', // Logo de Video Streaming
                               height: 100,
                             ),
                             SizedBox(height: 10),
