@@ -71,6 +71,12 @@ class HomeContent extends StatelessWidget {
     Movie(title: 'Pelicula 2', imageUrl: 'assets/imagen/pelicula2.jpeg'),
     Movie(title: 'Pelicula 3', imageUrl: 'assets/imagen/pelicula3.jpeg'),
     Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
   ];
 
   @override
