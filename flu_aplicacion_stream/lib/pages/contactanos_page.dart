@@ -17,20 +17,22 @@ class _ContactanosPageState extends State<ContactanosPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contáctanos'),
+        title:
+            Text('Contáctanos', style: TextStyle(fontWeight: FontWeight.bold)),
+        backgroundColor:
+            const Color.fromARGB(255, 90, 182, 228), // Color formal y elegante
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
           child: Container(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: Colors.grey.shade200,
+              color: Colors.grey.shade100,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.grey.shade400, width: 2),
+              border: Border.all(color: Colors.blueGrey.shade300, width: 2),
             ),
             child: SingleChildScrollView(
-              // Agregado para permitir desplazamiento
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -38,94 +40,61 @@ class _ContactanosPageState extends State<ContactanosPage> {
                   children: [
                     Text(
                       'Formulario de Contacto',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blueGrey[900]),
                     ),
                     SizedBox(height: 16),
 
                     // Nombre
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.blue.shade50,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.blue, width: 1),
-                      ),
-                      padding: EdgeInsets.all(8),
-                      margin: EdgeInsets.only(bottom: 16),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Nombre',
-                          border: InputBorder.none,
-                        ),
-                        onSaved: (value) => _nombre = value,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Por favor ingrese su nombre';
-                          }
-                          return null;
-                        },
-                      ),
+                    _buildInputField(
+                      labelText: 'Nombre',
+                      onSaved: (value) => _nombre = value,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor ingrese su nombre';
+                        }
+                        return null;
+                      },
                     ),
 
                     // Teléfono
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.green.shade50,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.green, width: 1),
-                      ),
-                      padding: EdgeInsets.all(8),
-                      margin: EdgeInsets.only(bottom: 16),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Teléfono',
-                          border: InputBorder.none,
-                        ),
-                        keyboardType: TextInputType.phone,
-                        onSaved: (value) => _telefono = value,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Por favor ingrese su número de teléfono';
-                          }
-                          return null;
-                        },
-                      ),
+                    _buildInputField(
+                      labelText: 'Teléfono',
+                      keyboardType: TextInputType.phone,
+                      onSaved: (value) => _telefono = value,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor ingrese su número de teléfono';
+                        }
+                        return null;
+                      },
                     ),
 
                     // Correo
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.orange.shade50,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.orange, width: 1),
-                      ),
-                      padding: EdgeInsets.all(8),
-                      margin: EdgeInsets.only(bottom: 16),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Correo Electrónico',
-                          border: InputBorder.none,
-                        ),
-                        keyboardType: TextInputType.emailAddress,
-                        onSaved: (value) => _correo = value,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Por favor ingrese su correo electrónico';
-                          }
-                          if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                            return 'Por favor ingrese un correo válido';
-                          }
-                          return null;
-                        },
-                      ),
+                    _buildInputField(
+                      labelText: 'Correo Electrónico',
+                      keyboardType: TextInputType.emailAddress,
+                      onSaved: (value) => _correo = value,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor ingrese su correo electrónico';
+                        }
+                        if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                          return 'Por favor ingrese un correo válido';
+                        }
+                        return null;
+                      },
                     ),
 
                     // Mensaje
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.purple.shade50,
+                        color: Colors.grey.shade50,
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.purple, width: 1),
+                        border: Border.all(
+                            color: Colors.blueGrey.shade300, width: 1),
                       ),
                       padding: EdgeInsets.all(8),
                       margin: EdgeInsets.only(bottom: 16),
@@ -133,6 +102,9 @@ class _ContactanosPageState extends State<ContactanosPage> {
                         decoration: InputDecoration(
                           labelText: 'Mensaje',
                           border: InputBorder.none,
+                          labelStyle: TextStyle(
+                              color: const Color.fromARGB(255, 46, 61, 68),
+                              fontWeight: FontWeight.w500),
                         ),
                         maxLines: 4,
                         onSaved: (value) => _mensaje = value,
@@ -148,17 +120,25 @@ class _ContactanosPageState extends State<ContactanosPage> {
                     // Botón de enviar
                     Center(
                       child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                              255, 96, 197, 247), // Color formal
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 32, vertical: 12),
+                        ),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             _formKey.currentState!.save();
-                            // Aquí puedes manejar el envío de los datos
+                            // Manejo de datos
                             print('Nombre: $_nombre');
                             print('Teléfono: $_telefono');
                             print('Correo: $_correo');
                             print('Mensaje: $_mensaje');
                           }
                         },
-                        child: Text('Enviar mensaje'),
+                        child: Text('Enviar mensaje',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ],
@@ -167,6 +147,35 @@ class _ContactanosPageState extends State<ContactanosPage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  // Método para crear campos de entrada de datos
+  Widget _buildInputField({
+    required String labelText,
+    required FormFieldSetter<String> onSaved,
+    required FormFieldValidator<String> validator,
+    TextInputType keyboardType = TextInputType.text,
+  }) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey.shade50,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: Colors.blueGrey.shade300, width: 1),
+      ),
+      padding: EdgeInsets.all(8),
+      margin: EdgeInsets.only(bottom: 16),
+      child: TextFormField(
+        decoration: InputDecoration(
+          labelText: labelText,
+          border: InputBorder.none,
+          labelStyle: TextStyle(
+              color: Colors.blueGrey[800], fontWeight: FontWeight.w500),
+        ),
+        keyboardType: keyboardType,
+        onSaved: onSaved,
+        validator: validator,
       ),
     );
   }
