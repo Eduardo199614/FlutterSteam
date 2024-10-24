@@ -58,28 +58,101 @@ class HomeContent extends StatelessWidget {
     Movie(title: 'Pelicula 2', imageUrl: 'assets/imagen/pelicula2.jpeg'),
     Movie(title: 'Pelicula 3', imageUrl: 'assets/imagen/pelicula3.jpeg'),
     Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 1', imageUrl: 'assets/imagen/pelicula1.jpeg'),
-    Movie(title: 'Pelicula 2', imageUrl: 'assets/imagen/pelicula2.jpeg'),
-    Movie(title: 'Pelicula 3', imageUrl: 'assets/imagen/pelicula3.jpeg'),
-    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 5', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Pelicula 6', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Pelicula 7', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 8.0,
-          mainAxisSpacing: 8.0,
-          childAspectRatio: 0.7,
+    return ListView(
+      padding: EdgeInsets.all(8.0),
+      children: [
+        buildMovieRow('Acción', movies),
+        SizedBox(height: 20), // Espaciado entre filas
+        buildMovieRow('Comedia', movies),
+        SizedBox(height: 20),
+        buildMovieRow('Drama', movies),
+        SizedBox(height: 20),
+        buildMovieRow('terror', movies),
+        SizedBox(height: 20),
+        buildMovieRow('Suspenso', movies),
+      ],
+    );
+  }
+
+  // Función para crear una fila de películas deslizables horizontalmente
+  Widget buildMovieRow(String categoryTitle, List<Movie> movies) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          categoryTitle,
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
-        itemCount: movies.length,
-        itemBuilder: (context, index) {
-          return HoverMovieCard(movie: movies[index]);
-        },
-      ),
+        SizedBox(height: 10),
+        SizedBox(
+          height: 180, // Altura de cada tarjeta de película
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: movies.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: HoverMovieCard(movie: movies[index]),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }
@@ -113,7 +186,8 @@ class _HoverMovieCardState extends State<HoverMovieCard> {
       child: AnimatedContainer(
         duration: Duration(milliseconds: 300),
         transform: _isHovered
-            ? (Matrix4.identity()..scale(1.1)) // Transformación correcta
+            ? (Matrix4.identity()
+              ..scale(1.1)) // Efecto hover para agrandar la tarjeta
             : Matrix4.identity(),
         child: Column(
           children: [
