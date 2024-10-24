@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'nosotros_page.dart';
-import 'contactanos_page.dart';
+import 'nosotros_page.dart'; // Asegúrate de que estos archivos existan
+import 'contactanos_page.dart'; // Asegúrate de que estos archivos existan
 
 class HomePage extends StatefulWidget {
   @override
@@ -54,61 +54,56 @@ class _HomePageState extends State<HomePage> {
 
 class HomeContent extends StatelessWidget {
   final List<Movie> movies = [
-    Movie(title: 'Pelicula 1', imageUrl: 'assets/imagen/pelicula1.jpeg'),
-    Movie(title: 'Pelicula 2', imageUrl: 'assets/imagen/pelicula2.jpeg'),
-    Movie(title: 'Pelicula 3', imageUrl: 'assets/imagen/pelicula3.jpeg'),
-    Movie(title: 'Pelicula 4', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 5', imageUrl: 'assets/imagen/pelicula1.jpeg'),
-    Movie(title: 'Pelicula 6', imageUrl: 'assets/imagen/pelicula2.jpeg'),
-    Movie(title: 'Pelicula 7', imageUrl: 'assets/imagen/pelicula3.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
-    Movie(title: 'Pelicula 8', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+    Movie(title: 'Thor 3', imageUrl: 'assets/imagen/pelicula1.jpeg'),
+    Movie(title: 'Joker', imageUrl: 'assets/imagen/pelicula2.jpeg'),
+    Movie(title: 'Tom Raider', imageUrl: 'assets/imagen/pelicula3.jpeg'),
+    Movie(title: 'Valiente', imageUrl: 'assets/imagen/pelicula4.jpeg'),
+
+    // Agrega más películas si es necesario...
   ];
 
   @override
@@ -117,19 +112,18 @@ class HomeContent extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       children: [
         buildMovieRow('Acción', movies),
-        SizedBox(height: 20), // Espaciado entre filas
+        SizedBox(height: 20),
         buildMovieRow('Comedia', movies),
         SizedBox(height: 20),
         buildMovieRow('Drama', movies),
         SizedBox(height: 20),
-        buildMovieRow('terror', movies),
+        buildMovieRow('Terror', movies),
         SizedBox(height: 20),
         buildMovieRow('Suspenso', movies),
       ],
     );
   }
 
-  // Función para crear una fila de películas deslizables horizontalmente
   Widget buildMovieRow(String categoryTitle, List<Movie> movies) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,7 +134,7 @@ class HomeContent extends StatelessWidget {
         ),
         SizedBox(height: 10),
         SizedBox(
-          height: 180, // Altura de cada tarjeta de película
+          height: 180,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: movies.length,
@@ -157,7 +151,6 @@ class HomeContent extends StatelessWidget {
   }
 }
 
-// Modelo de la película
 class Movie {
   final String title;
   final String imageUrl;
@@ -165,7 +158,6 @@ class Movie {
   Movie({required this.title, required this.imageUrl});
 }
 
-// Widget con efecto de hover
 class HoverMovieCard extends StatefulWidget {
   final Movie movie;
 
