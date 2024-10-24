@@ -24,15 +24,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Stack(
         children: [
           // Imagen de fondo empresarial
-          Positioned.fill(
-            child: Opacity(
-              opacity: 0.2,
-              child: Image.asset(
-                'assets/background.jpg', // Asegúrate de tener una imagen empresarial
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
+
           Padding(
             padding: EdgeInsets.all(16.0),
             child: SingleChildScrollView(
@@ -59,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: Column(
                           children: [
                             Image.asset(
-                              'assets/logo.jpeg', // Logo de Video Streaming
+                              'assets/imagen/logo.jpeg', // Logo de Video Streaming
                               height: 100,
                             ),
                             SizedBox(height: 10),
